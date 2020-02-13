@@ -1,0 +1,42 @@
+.link {
+    font-size: 14px;
+    color: rgb(190, 199, 213);
+    text-decoration: none;
+    margin-right: 18px;
+    transition: all 0.5s;
+}
+
+.link--active {
+    color: rgb(105, 115, 132);
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.link__text {
+    font-weight: 500;
+    font-family: 'eina_semibold';
+    margin-left: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+    .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(190, 199, 213);
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+        margin-right: 8px;
+    }
+
+    .link--active {
+        border: 1px solid rgb(105, 115, 132);
+    }
+
+    .link__text {
+        display: none;
+    }
+}

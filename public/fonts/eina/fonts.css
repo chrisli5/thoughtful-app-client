@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'eina_bold';
+    src: url('eina-01-bold.eot');
+    src: url('eina-01-bold.eot?#iefix') format('embedded-opentype'),
+         url('eina-01-bold.woff2') format('woff2'),
+         url('eina-01-bold.woff') format('woff'),
+         url('eina-01-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'eina_semibold';
+    src: url('eina-03-semibold.eot');
+    src: url('eina-03-semibold.eot?#iefix') format('embedded-opentype'),
+         url('eina-03-semibold.woff2') format('woff2'),
+         url('eina-03-semibold.woff') format('woff'),
+         url('eina-03-semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'eina_regular';
+    src: url('eina-01-regular.eot');
+    src: url('eina-01-regular.eot?#iefix') format('embedded-opentype'),
+         url('eina-01-regular.woff2') format('woff2'),
+         url('eina-01-regular.woff') format('woff'),
+         url('eina-01-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'eina';
+    src: url('eina-04-regular.eot');
+    src: url('eina-04-regular.eot?#iefix') format('embedded-opentype'),
+         url('eina-04-regular.woff2') format('woff2'),
+         url('eina-04-regular.woff') format('woff'),
+         url('eina-04-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
