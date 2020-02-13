@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import NoteListContext from '../../utils/NoteListContext';
 
-export default function PrivateRoute({ component, ...props }) {
+const PrivateRoute = ({ component, ...props }) => {
   const Component = component
   return (
     <NoteListContext.Consumer>
@@ -23,3 +23,5 @@ export default function PrivateRoute({ component, ...props }) {
     </NoteListContext.Consumer>
   )
 }
+
+export default PrivateRoute;
