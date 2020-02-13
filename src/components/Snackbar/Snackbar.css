@@ -1,0 +1,16 @@
+.snackbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 48px;
+    color: #fff;
+}
+
+.snackbar--error {
+     background-color: #ef4565;
+}
+
+.snackbar--success {
+    background-color: #2cb67d;
+}
