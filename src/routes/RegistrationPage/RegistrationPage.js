@@ -8,6 +8,12 @@ import './RegistrationPage.css';
 class RegistrationPage extends Component {
     static contextType = NoteListContext;
 
+    static defaultProps = {
+        history: {
+            push: () => {},
+        },
+    }
+
     state = {
         username: '',
         password: '',
