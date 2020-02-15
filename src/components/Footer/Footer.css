@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    background-color: #094067;
+    color: #fff;
+    font-family: 'eina', sans-serif;
+}
+
+.footer__title {
+    margin: 8px 0;
+}
+
+.footer__container {
+    margin-bottom: 12px;
+}
+
+.footer__icon {
+    color: #fff;
+}
+
+.footer__link {
+    margin-right: 12px;
+}
+
+.footer__text {
+    margin: 0;
+}

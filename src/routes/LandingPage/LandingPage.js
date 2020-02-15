@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from '../../components/Footer/Footer';
 import mindful from '../../images/mindful.png';
 import learn from '../../images/learn.png';
 import time from '../../images/time.png';
@@ -37,6 +38,7 @@ class LandingPage extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </section>
         )
     }
