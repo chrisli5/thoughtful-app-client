@@ -1,0 +1,68 @@
+.note {
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #fffffe;
+    box-shadow: 0 0.175em 0.5em rgba(2,8,20,.1), 0 0.085em 0.175em rgba(2,8,20,.08);
+    width: 100%;
+}
+
+.note__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.note__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.note__icon {
+    font-size: 14px;
+    color: #90b4ce;
+    margin-right: 8px;
+}
+
+.note__date {
+    color: #5f6c7b;
+    font-family: 'system-ui', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.note__time {
+    color: #094067;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'system-ui', sans-serif;
+    margin: 0;
+}
+
+.note__mood {
+    font-size: 32px;
+    color: #90b4ce;
+}
+
+.note__content {
+    color: #5f6c7b;
+    font-family: 'system-ui', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 18px 0;
+}
+
+.note__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.note__space {
+    width: 8px;
+}

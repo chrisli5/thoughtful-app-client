@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
 import NotesService from '../../services/notes-api-service';
 import TokenService from '../../services/token-service';
-import NoteListContext from '../../utils/NoteListContext';
+import NoteListContext from '../../utils/note-list-context';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import './LoginPage.css';

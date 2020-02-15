@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
-import NoteListContext from '../../utils/NoteListContext';
+import NoteListContext from '../../utils/note-list-context';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
 import './RegistrationPage.css';

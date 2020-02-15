@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud, faSquare, faPencilAlt, faHome, faSignInAlt, faSignOutAlt, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import NavLink from './NavLink/NavLink';
-import NoteListContext from '../../utils/NoteListContext';
+import NoteListContext from '../../utils/note-list-context';
 import TokenService from '../../services/token-service';
 import './Header.css';
 

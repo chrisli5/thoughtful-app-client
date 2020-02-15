@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import NoteListContext from '../../utils/NoteListContext';
+import NoteListContext from '../../utils/note-list-context';
 
 const PublicOnlyRoute = ({ component, ...props }) => {
   const Component = component

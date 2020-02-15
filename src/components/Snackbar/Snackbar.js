@@ -1,5 +1,5 @@
 import React from 'react';
-import NoteListContext from '../../utils/NoteListContext';
+import NoteListContext from '../../utils/note-list-context';
 import './Snackbar.css';
 
 const getStatus = messageType => {

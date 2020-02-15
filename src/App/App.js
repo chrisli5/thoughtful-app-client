@@ -4,7 +4,7 @@ import AuthApiService from '../services/auth-api-service';
 import NotesService from '../services/notes-api-service';
 import PublicOnlyRoute from '../components/Utils/PublicOnlyRoute';
 import PrivateRoute from '../components/Utils/PrivateRoute';
-import NoteListContext from '../utils/NoteListContext';
+import NoteListContext from '../utils/note-list-context';
 import Header from '../components/Header/Header';
 import Snackbar from '../components/Snackbar/Snackbar';
 import LandingPage from '../routes/LandingPage/LandingPage';
