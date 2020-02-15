@@ -3,6 +3,8 @@ import NotesService from '../../services/notes-api-service';
 import { filterNotes } from '../../utils/notes-helpers';
 import NoteListContext from '../../utils/note-list-context';
 import Note from '../../components/Note/Note';
+import Loading from '../../components/Loading/Loading';
+import Empty from '../../components/Empty/Empty';
 import './NoteListPage.css';
 
 class NoteListPage extends Component {
@@ -107,7 +109,6 @@ class NoteListPage extends Component {
         return (
             <>
                 {
-                    noteList ? 
                     noteList.map(note =>
                         <Note
                             key={note.id}
@@ -115,19 +116,33 @@ class NoteListPage extends Component {
                             openEdit={this.openEdit}
                             handleDelete={this.handleDelete}
                         />
-                    ) :
-                    <p>Retrieving Data...</p>
+                    )
                 }
             </>
         )
     }
 
-    render() {
-        const { isEdit } = this.state;
+    renderEdit = () => {
+        return (
+            <>
+            </>
+        )
+    }
 
+    renderScreen = () => {
+        const { isEdit } = this.state;
+        const { noteList } = this.context;
+        
+        if (isEdit) return this.renderEdit();
+        else if (!noteList) return <Loading />
+        else if (noteList.length === 0) return <Empty />
+        else return this.renderNoteList();
+    }
+
+    render() {
         return (
             <section className='note-list-page'>
-                {this.renderNoteList()}
+                { this.renderScreen() }
             </section>
         )
     }
