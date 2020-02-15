@@ -18,3 +18,10 @@ export const filterNotes = (notes, startDate, endDate, mood, sortBy='desc') => {
         }
     })
 }
+
+export const parseDate = dateStr => {
+    //Sample date format
+    //Sun Jan 19 2020 23:35:09 GMT-0800 (Pacific Standard Time)
+    const arr = dateStr.split(' ');
+    return moment(`${arr[1]} ${arr[2]} ${arr[3]}`, 'MMM DD YYYY').format('MMMM DD, YYYY');
+}

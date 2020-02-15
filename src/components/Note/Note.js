@@ -1,7 +1,7 @@
 import React from 'react';
-import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFrown, faAngry, faMeh, faSmile, faLaugh, faCalendar, faClock } from '@fortawesome/free-regular-svg-icons'
+import { parseDate } from '../../utils/notes-helpers';
 import Button from '../Button/Button';
 import './Note.css';
 
@@ -20,7 +20,7 @@ const Note = ({ note, openEdit, handleDelete }) => (
             <div>
                 <div className='note__container'>
                     <FontAwesomeIcon icon={faCalendar} className='note__icon' />
-                    <p className='note__date'>{moment(note.createdAt).format('MMMM DD, YYYY')}</p>
+                    <p className='note__date'>{parseDate(note.createdAt)}</p>
                 </div>
                 <div className='note__container'>
                     <FontAwesomeIcon icon={faClock} className='note__icon' />
