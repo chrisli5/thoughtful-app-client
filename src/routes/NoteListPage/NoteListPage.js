@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { parseDate } from '../../utils/notes-helpers';
 import NotesService from '../../services/notes-api-service';
 import { filterNotes } from '../../utils/notes-helpers';
 import NoteListContext from '../../utils/note-list-context';
+import ListFilter from '../../components/ListFilter/ListFilter';
 import Note from '../../components/Note/Note';
+import NoteForm from '../../components/NoteForm/NoteForm';
 import Loading from '../../components/Loading/Loading';
 import Empty from '../../components/Empty/Empty';
 import './NoteListPage.css';
@@ -56,7 +59,7 @@ class NoteListPage extends Component {
         })
     }
 
-    handleForm = e => {
+    onChange = e => {
         this.setState({
             noteToEdit: {
                 ...this.state.noteToEdit,
@@ -105,11 +108,20 @@ class NoteListPage extends Component {
 
     renderNoteList = () => {
         const { noteList } = this.context;
+        const { filter } = this.state;
+        const { startDate, endDate, mood } = this.state.filter;
+
+        const sortedNoteList = filterNotes(noteList, startDate, endDate, mood);
 
         return (
             <>
+                <ListFilter
+                    filter={filter}
+                    setMood={this.setMood}
+                    setDates={this.setDates}
+                />
                 {
-                    noteList.map(note =>
+                    sortedNoteList.map(note =>
                         <Note
                             key={note.id}
                             note={note}
@@ -123,26 +135,37 @@ class NoteListPage extends Component {
     }
 
     renderEdit = () => {
+        const { noteToEdit } = this.state;
+
         return (
             <>
+                <div className='edit-note-page__container'>
+                    <h2 className='edit-note-page__title'>Edit Entry</h2>
+                    <h2 className='edit-note-page__date'>{parseDate(noteToEdit.createdAt).format('MMMM DD, YYYY')}</h2>
+                </div>
+                <NoteForm
+                    note={noteToEdit}
+                    onChange={this.onChange}
+                    onSubmit={this.handleEdit}
+                    onBack={this.closeEdit}
+                />
             </>
         )
     }
 
-    renderScreen = () => {
+    render() {
         const { isEdit } = this.state;
         const { noteList } = this.context;
-        
-        if (isEdit) return this.renderEdit();
-        else if (!noteList) return <Loading />
-        else if (noteList.length === 0) return <Empty />
-        else return this.renderNoteList();
-    }
+        let showScreen;
 
-    render() {
+        if (isEdit) showScreen = this.renderEdit();
+        else if (!noteList) showScreen = <Loading />;
+        else if (noteList.length === 0) showScreen = <Empty />;
+        else showScreen = this.renderNoteList();
+
         return (
             <section className='note-list-page'>
-                { this.renderScreen() }
+                {showScreen}
             </section>
         )
     }

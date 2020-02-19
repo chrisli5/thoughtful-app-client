@@ -5,7 +5,7 @@
     border-radius: 4px;
     background-color: #fffffe;
     box-shadow: 0 0.175em 0.5em rgba(2,8,20,.1), 0 0.085em 0.175em rgba(2,8,20,.08);
-    width: 100%;
+    width: 345px;
 }
 
 .note__header {
@@ -31,7 +31,7 @@
 
 .note__date {
     color: #5f6c7b;
-    font-family: 'system-ui', sans-serif;
+    font-family: 'eina', sans-serif;
     font-weight: 400;
     margin: 0;
 }
@@ -39,19 +39,19 @@
 .note__time {
     color: #094067;
     font-size: 18px;
-    font-weight: 600;
-    font-family: 'system-ui', sans-serif;
+    font-weight: 550;
+    font-family: 'eina_semibold', sans-serif;
     margin: 0;
 }
 
 .note__mood {
-    font-size: 32px;
+    font-size: 48px;
     color: #90b4ce;
 }
 
 .note__content {
     color: #5f6c7b;
-    font-family: 'system-ui', sans-serif;
+    font-family: 'eina', sans-serif;
     font-weight: 400;
     line-height: 1.6;
     margin: 0 0 18px 0;
@@ -65,4 +65,36 @@
 
 .note__space {
     width: 8px;
+}
+
+@media only screen and (min-width: 600px) { 
+    .note {
+        width: 512px;
+        padding: 18px;
+    }
+
+    .note__header {
+        margin-bottom: 10px;
+    }
+
+    .note__container {
+        margin-bottom: 10px;
+    }
+
+    .note__icon {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .note__time {
+        font-size: 20px;
+    }
+
+    .note__mood {
+        font-size: 56px;
+    }
+
+    .note__space {
+        width: 10px;
+    }
 }

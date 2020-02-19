@@ -1,0 +1,20 @@
+.radio {
+    display: inline-block;
+    font-size: 48px;
+}
+
+.radio--checked {
+    color: #094067;
+}
+
+.radio--unchecked {
+    color: #90b4ce;
+}
+
+.radio__input {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) { 
+
+}

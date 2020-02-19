@@ -20,7 +20,7 @@ const Note = ({ note, openEdit, handleDelete }) => (
             <div>
                 <div className='note__container'>
                     <FontAwesomeIcon icon={faCalendar} className='note__icon' />
-                    <p className='note__date'>{parseDate(note.createdAt)}</p>
+                    <p className='note__date'>{parseDate(note.createdAt).format('MMMM DD, YYYY')}</p>
                 </div>
                 <div className='note__container'>
                     <FontAwesomeIcon icon={faClock} className='note__icon' />

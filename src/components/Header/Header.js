@@ -19,7 +19,7 @@ class Header extends Component {
         return (
             <div className='header__container'>
                 <NavLink to='/home' icon={faHome}>Home</NavLink>
-                <NavLink to='/add-notes' icon={faPencilAlt}>New Entry</NavLink>
+                <NavLink to='/add-note' icon={faPencilAlt}>New Entry</NavLink>
                 <NavLink to='/login' icon={faSignOutAlt} onClick={this.handleLogoutClick}>Logout</NavLink>
             </div>
         )
