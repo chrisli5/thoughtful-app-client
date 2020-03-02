@@ -20,7 +20,7 @@ class NoteListPage extends Component {
             startDate: null,
             endDate: null,
             mood: '',
-            sortBy: 'desc',
+            order: 'date',
         }
     }
 
@@ -39,6 +39,15 @@ class NoteListPage extends Component {
             filter: {
                 ...this.state.filter,
                 mood,
+            }
+        })
+    }
+
+    setOrder = order => {
+        this.setState({
+            filter: {
+                ...this.state.filter,
+                order,
             }
         })
     }
@@ -109,9 +118,9 @@ class NoteListPage extends Component {
     renderNoteList = () => {
         const { noteList } = this.context;
         const { filter } = this.state;
-        const { startDate, endDate, mood } = this.state.filter;
+        const { startDate, endDate, mood, order } = this.state.filter;
 
-        const sortedNoteList = filterNotes(noteList, startDate, endDate, mood);
+        const sortedNoteList = filterNotes(noteList, startDate, endDate, mood, order);
 
         return (
             <>
@@ -119,6 +128,7 @@ class NoteListPage extends Component {
                     filter={filter}
                     setMood={this.setMood}
                     setDates={this.setDates}
+                    setOrder={this.setOrder}
                 />
                 {
                     sortedNoteList.map(note =>

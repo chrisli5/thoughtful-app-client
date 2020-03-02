@@ -14,8 +14,8 @@ class ListFilter extends Component {
   }
 
   render() {
-    const { setDates, setMood } = this.props;
-    const { startDate, endDate, mood } = this.props.filter;
+    const { setDates, setMood, setOrder } = this.props;
+    const { startDate, endDate, mood, order } = this.props.filter;
 
     return (
       <div className='list-filter'>
@@ -44,11 +44,12 @@ class ListFilter extends Component {
           <option value='5'>Amazing</option>
         </select>
         <select
-          onChange={e => setMood(e.target.value)}
+          onChange={e => setOrder(e.target.value)}
           className='list-filter__select'
-          value={mood}
+          value={order}
         >
-          <option value=''>Order</option>
+          <option value='date'>Sort by Date</option>
+          <option value='hours'>Sort by Hours</option>
         </select>
         </div>
     );
