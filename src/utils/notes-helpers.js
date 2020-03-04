@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-export const filterNotes = (notes, startDate, endDate, mood, order='date') => {
-    if (!notes) return null; 
-    
+export const filterNotes = (notes, startDate, endDate, mood, order = 'date') => {
+    if (!notes) return null;
+
     return notes.filter(note => {
         const noteMoment = parseDate(note.createdAt);
         const startDateMatch = startDate ? noteMoment.isSameOrAfter(startDate, 'day') : true;
@@ -11,11 +11,10 @@ export const filterNotes = (notes, startDate, endDate, mood, order='date') => {
 
         return startDateMatch && endDateMatch && moodMatch;
     }).sort((a, b) => {
-        if(order === 'hours') {
+        if (order === 'hours') {
             return a.timeSpent < b.timeSpent ? 1 : -1;
-        } else if (order === 'date') {
-            return a.createdAt < b.createdAt ? 1 : -1;
         }
+        return a.createdAt < b.createdAt ? 1 : -1;
     })
 }
 
